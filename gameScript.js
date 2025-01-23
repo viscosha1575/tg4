@@ -10,7 +10,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const tg = window.Telegram.WebApp;
     // Wait for the Web App to be ready
     tg.ready();
+     // Dynamically adjust game height
+    function adjustGameHeight() {
+        const viewportHeight = tg.viewportStableHeight || tg.viewportHeight || window.innerHeight;
+        gameContainer.style.height = `${viewportHeight}px`;
+    }
 
+    adjustGameHeight();
+
+    tg.onEvent("viewportChanged", adjustGameHeight);
     const usernameElement = document.getElementById('username');
 const errorElement = document.getElementById('error');
     const progressCircle = document.querySelector('.circle-progress');
