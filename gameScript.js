@@ -29,7 +29,7 @@ const errorElement = document.getElementById('error');
         lastName: user.last_name || '0',
         sessionStarts: parseInt(0) || 0,
         sessionEnds: parseInt(0) || 0,
-        points: parseInt(0) || 0,
+        points: score || 0,
         boostsUsed: parseInt(0) || 0,
         };
         
