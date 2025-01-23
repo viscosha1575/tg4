@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffcc00;
+    display: flex; /* Используем flexbox для центрирования */
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    height: 100vh; /* Высота экрана */
+    overflow: hidden; /* Запрет прокрутки страницы */
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column; /* Изменяем направление на вертикальное */
+    align-items: center; /* Центрирование элементов по горизонтали */
+    justify-content: flex-start; /* Таймер сверху */
+    
+}
+
+.timer-container {
+    position: relative;
+    margin-bottom: 20px;
+    width: 75px; /* Уменьшенный размер */
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer-svg {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: rgba(0, 0, 0, 0.2); /* Фоновая окружность (светлый цвет) */
+    stroke-width: 5;
+}
+
+.circle-progress {
+    fill: none;
+    stroke: black; /* Цвет прогресса */
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-dasharray: 188.5; /* Длина окружности (2πr, где r=30) */
+    stroke-dashoffset: 0; /* Начинается с полного круга */
+    transition: stroke-dashoffset 1s linear;
+}
+
+.timer-text {
+    position: absolute;
+    font-size: 1.25rem; /* Размер текста */
+    font-weight: bold;
+    color: black;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* Три столбца */
+    gap: 5px; /* Расстояние между элементами */
+    width: auto; /* Ширина сетки зависит от контента */
+    height: auto; /* Высота сетки зависит от контента */
+    margin-top: 20px; /* Отступ между таймером и сеткой */
+}
+
+.grid-item {
+    width: 100%; /* Автоматическое растяжение внутри колонки */
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.grid-item img {
+    width: 80%; /* Уменьшение размера изображения */
+    height: auto; /* Сохраняет пропорции */
+    object-fit: contain; /* Подгоняет изображение без обрезки */
+}
+.timer-container {
+    position: relative;
+    margin-bottom: 20px;
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer-svg {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+}
+.circle-progress {
+    fill: none;
+    stroke: black; /* Полностью черный цвет по умолчанию */
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-dasharray: 188.5; /* Длина окружности (2πr, где r=30) */
+    stroke-dashoffset: 0; /* Таймер начинается с полной окружности */
+    transform-origin: center;
+    transform: rotate(-90deg); /* Поворачиваем окружность для движения по часовой стрелке */
+    transition: stroke 0.5s ease; /* Плавный переход цвета */
+  }
+.circle-bg {
+    fill: none;
+    stroke: rgba(0, 0, 0, 0.5); /* Фоновая окружность */
+    stroke-width: 5;
+}
+
+
+
+.timer-text {
+    position: absolute;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: black;
+}
+
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .grid {
+        gap: 2px; /* Уменьшение расстояния еще больше */
+    }
+
+    .grid-item img {
+        width: 70%; /* Ещё меньшее изображение для мобильных */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        gap: 5px; /* Минимальное расстояние между элементами */
+    }
+
+    .grid-item img {
+        width: 80%; /* Подгоняем под маленькие экраны */
+    }
+}
