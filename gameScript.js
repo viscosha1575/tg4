@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Wait for the Web App to be ready
     tg.ready();
      // Dynamically adjust game heigh
-
-    tg.onEvent("viewportChanged", adjustGameHeight);
     const usernameElement = document.getElementById('username');
 const errorElement = document.getElementById('error');
     const progressCircle = document.querySelector('.circle-progress');
