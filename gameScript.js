@@ -23,7 +23,7 @@ const errorElement = document.getElementById('error');
         try {
         const user = tg.initDataUnsafe?.user || {};
         const userData = {
-        userId: user.id || '0',
+        userId: user.id,
         username: user.username || '0',
         firstName: user.first_name || '0',
         lastName: user.last_name || '0',
