@@ -10,13 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const tg = window.Telegram.WebApp;
     // Wait for the Web App to be ready
     tg.ready();
-     // Dynamically adjust game height
-    function adjustGameHeight() {
-        const viewportHeight = tg.viewportStableHeight || tg.viewportHeight || window.innerHeight;
-        gameContainer.style.height = `${viewportHeight}px`;
-    }
-
-    adjustGameHeight();
+     // Dynamically adjust game heigh
 
     tg.onEvent("viewportChanged", adjustGameHeight);
     const usernameElement = document.getElementById('username');
